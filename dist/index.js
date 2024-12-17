@@ -5754,6 +5754,8 @@ async function readPageFiles(files) {
                 try {
                     await fs.promises.stat(file);
                 } catch (error) {
+                    core.warning(`⚠️ Error `);
+                    core.warning(`⚠️ Error "${error}" `);
                     core.warning(`⚠️ File "${file}" does not exist, skipping`);
 
                     throw error;
